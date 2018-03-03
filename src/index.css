@@ -1,0 +1,94 @@
+:root {
+  --font-stack-consolas: 'Consolas', 'monaco', monospace;
+
+  --font-stack-garamond: 'Garamond', 'Baskerville', 'Baskerville Old Face',
+    'Hoefler Text', 'Times New Roman', serif;
+
+  --font-stack-helvetica: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+  --font-stack-hoefler-text: 'Hoefler Text', 'Baskerville Old Face', 'Garamond',
+    'Times New Roman', serif;
+
+  --font-stack-system: -apple-system, BlinkMacSystemFont, 'Avenir Next',
+    'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica',
+    'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu',
+    'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif;
+}
+
+:root {
+  /* Typography */
+  --base-font-family: var(--font-stack-system);
+  --heading-font-family: var(--base-font-family);
+
+  /* Line height */
+  --base-line-height: 1.5;
+  --heading-line-height: 1.2;
+
+  /* Other sizes */
+  --base-border-radius: 3px;
+  --base-spacing: 1.5rem;
+  --small-spacing: 0.75rem;
+  --base-z-index: 0;
+
+  /* Colors */
+  --black: #262626;
+  --white: #FAFAFA;
+  --deep-black: #000000;
+  --light-white: #FFFFFF;
+  --dark-blue: #003569;
+  --light-blue: #3897F0;
+  --dark-gray: #999999;
+  --medium-dark-gray: #DBDBDB;
+  --medium-light-gray: #EFEFEF;
+  --light-gray: #F8F8F8;
+
+  /* Font colors */
+  --base-font-color: var(--black);
+  --accent-color: var(--blue);
+  --light-accent-color: var(--light-blue);
+
+  /* Border */
+  --base-border-color: rgba(0, 0, 0, 0.098);
+  --base-border: 1 px solid var(--base-border-color);
+
+  /* Background colors */
+  --viewport-background-color: var(--light-gray);
+
+  /* Focus */
+  --focus-outline-color: var(--light-accent-color);
+  --focus-outline-width: 3px;
+  --focus-outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  --focus-outline-offset: 2px;
+
+  /* Animations */
+  --base-duration: 150ms;
+  --base-timing: ease;
+}
+
+body {
+  font-family: var(--base-font-family);
+}
+
+#react-root,
+article,
+div,
+footer,
+header,
+main,
+nav,
+section {
+  align-items: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+a {
+  color: #262626;
+  text-decoration: none;
+}
