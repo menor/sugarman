@@ -19,6 +19,8 @@
   /* Typography */
   --base-font-family: var(--font-stack-system);
   --heading-font-family: var(--base-font-family);
+  --base-font-size: 14px;
+  --heading-font-size: 16px;
 
   /* Line height */
   --base-line-height: 1.5;
@@ -32,15 +34,15 @@
 
   /* Colors */
   --black: #262626;
-  --white: #FAFAFA;
+  --white: #fafafa;
   --deep-black: #000000;
-  --light-white: #FFFFFF;
+  --light-white: #ffffff;
   --dark-blue: #003569;
-  --light-blue: #3897F0;
+  --light-blue: #3897f0;
   --dark-gray: #999999;
-  --medium-dark-gray: #DBDBDB;
-  --medium-light-gray: #EFEFEF;
-  --light-gray: #F8F8F8;
+  --medium-dark-gray: #dbdbdb;
+  --medium-light-gray: #efefef;
+  --light-gray: #f8f8f8;
 
   /* Font colors */
   --base-font-color: var(--black);
@@ -65,8 +67,103 @@
   --base-timing: ease;
 }
 
+/* Layout */
+html {
+  background-color: var(--viewport-background-color);
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
 body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/* Lists */
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: 600;
+  margin: 0;
+}
+
+dd {
+  margin: 0;
+}
+
+/* Media */
+figure {
+  margin: 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+/* Typography */
+html {
+  color: var(--base-font-color);
   font-family: var(--base-font-family);
+  font-size: 100%;
+  line-height: var(--base-line-height);
+}
+
+body {
+  font-size: var(--base-font-size);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
+  margin: 0 0 var(--small-spacing);
+}
+
+p {
+  margin: 0 0 var(--small-spacing);
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+a:focus {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+}
+
+hr {
+  border-bottom: var(--base-border);
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: var(--base-spacing) 0;
 }
 
 #react-root,
