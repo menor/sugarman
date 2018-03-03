@@ -25,8 +25,10 @@ class App extends Component {
               </Avatar>
               <Details>
                 <Title href="#">{badAfro.name}</Title>
+                <Subtitle>{badAfro.type}</Subtitle>
               </Details>
             </CardHeader>
+            <CardImage src={moonrite.coverUri} />
           </Card>
         </Cards>
       </Main>
@@ -37,7 +39,6 @@ class App extends Component {
 export default App
 
 const Main = styled.main`
-  background-color: #fafafa;
 `
 
 const Card = styled.article`
@@ -65,6 +66,8 @@ const Details = styled.div`
   margin-left: 12px;
   flex-grow: 1;
   flex-shrink: 1;
+  display: flex;
+  justify-content: center;
 `
 
 const Avatar = styled.a`
@@ -85,10 +88,19 @@ const AvatarImage = styled.img`
 
 const Title = styled.a`
   font-weight: 600;
-  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   padding-left: 5px;
   margin-left: -5px;
+`
+
+const Subtitle = styled.p`
+  color: var(--dark-gray);
+  margin-bottom: 0;
+`
+
+const CardImage = styled.img`
+  margin: 0;
+  padding: 0;
 `
