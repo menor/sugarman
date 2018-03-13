@@ -1,10 +1,18 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
+import Bookmark from './icons/bookmark'
+import Heart from './icons/heart'
 
 const moonrite = {
   artist: 'Moonrite',
   coverUri: 'https://i.scdn.co/image/183b359cc1b870bf5e32a3ac54d41cf6e24db423',
   title: 'S/T',
+}
+
+const album = {
+  artist: 'Baby Woodrose',
+  title: 'Love Comes Down',
+  coverUri: '/images/albums/album-02.jpg',
 }
 
 const badAfro = {
@@ -28,7 +36,16 @@ class App extends Component {
                 <Subtitle>{badAfro.type}</Subtitle>
               </Details>
             </CardHeader>
-            <CardImage src={moonrite.coverUri} />
+            <CardImage src={album.coverUri} />
+            <CardFooter>
+            <AlbumCredits>
+              <Header>{album.artist}</Header>
+              <Subheader>{album.title}</Subheader>
+            </AlbumCredits>
+            <IconContainer>
+              <Bookmark />
+          </IconContainer>
+          </CardFooter>
           </Card>
         </Cards>
       </Main>
@@ -38,8 +55,7 @@ class App extends Component {
 
 export default App
 
-const Main = styled.main`
-`
+const Main = styled.main``
 
 const Card = styled.article`
   padding: 0;
@@ -103,4 +119,28 @@ const Subtitle = styled.p`
 const CardImage = styled.img`
   margin: 0;
   padding: 0;
+`
+
+const CardFooter = styled.div`
+  flex-direction: row;
+  justify-content: space-between;
+`
+
+const AlbumCredits = styled.div`
+  justify-content: flex-end;
+  padding: 16px;
+`
+
+const Header = styled.h2`
+  margin-bottom: 0.2rem;
+`
+
+const Subheader = styled.h3`
+  color: var(--dark-gray);
+  margin-bottom: 0;
+`
+
+const IconContainer = styled.div`
+  padding-right: 8px;
+  padding-top: 16px;
 `
