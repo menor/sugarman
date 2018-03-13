@@ -98,6 +98,7 @@ const Main = styled.main``
 const Card = styled.article`
   padding: 0;
   width: 100%;
+  padding-bottom: 48px;
 `
 
 const Cards = styled.section`
