@@ -3,50 +3,88 @@ import styled from 'styled-components'
 import Bookmark from './icons/bookmark'
 import Heart from './icons/heart'
 
-const moonrite = {
-  artist: 'Moonrite',
-  coverUri: 'https://i.scdn.co/image/183b359cc1b870bf5e32a3ac54d41cf6e24db423',
-  title: 'S/T',
+const albums = {
+  0: {
+    artist: 'Baby Woodrose',
+    title: 'Love Comes Down',
+    coverUri: '/images/albums/album-02.jpg',
+  },
+  1: {
+    artist: 'Black Joe Lewis & the Honeybears',
+    title: 'Scandalous',
+    coverUri: '/images/albums/album-01.jpg',
+  },
+  2: {
+    artist: 'Big Star',
+    title: '#1 Record',
+    coverUri: '/images/albums/album-03.jpg',
+  },
+  3: {
+    artist: 'Cheap Time',
+    title: 'S/T',
+    coverUri: '/images/albums/album-04.jpg',
+  },
 }
 
-const album = {
-  artist: 'Baby Woodrose',
-  title: 'Love Comes Down',
-  coverUri: '/images/albums/album-02.jpg',
+const users = {
+  0: {
+    name: 'Bad Afro Records',
+    type: 'Record Label',
+    avatar: '/images/avatars/bad-afro.jpg',
+  },
 }
 
-const badAfro = {
-  name: 'Bad Afro Records',
-  type: 'Record Label',
-  avatar: '/images/avatars/bad-afro.jpg',
-}
+const posts = [
+  {
+    key: '0001',
+    user: users[0],
+    album: albums[0],
+  },
+  {
+    key: '0002',
+    user: users[0],
+    album: albums[1],
+  },
+  {
+    key: '0003',
+    user: users[0],
+    album: albums[2],
+  },
+  {
+    key: '0004',
+    user: users[0],
+    album: albums[3],
+  },
+]
 
 class App extends Component {
   render() {
     return (
       <Main>
         <Cards>
-          <Card>
-            <CardHeader>
-              <Avatar>
-                <AvatarImage src={badAfro.avatar} />
-              </Avatar>
-              <Details>
-                <Title href="#">{badAfro.name}</Title>
-                <Subtitle>{badAfro.type}</Subtitle>
-              </Details>
-            </CardHeader>
-            <CardImage src={album.coverUri} />
-            <CardFooter>
-            <AlbumCredits>
-              <Header>{album.artist}</Header>
-              <Subheader>{album.title}</Subheader>
-            </AlbumCredits>
-            <IconContainer>
-              <Bookmark />
-          </IconContainer>
-          </CardFooter>
-          </Card>
+          {posts.map(post => (
+            <Card>
+              <CardHeader>
+                <Avatar>
+                  <AvatarImage src={post.user.avatar} />
+                </Avatar>
+                <Details>
+                  <Title href="#">{post.user.name}</Title>
+                  <Subtitle>{post.user.type}</Subtitle>
+                </Details>
+              </CardHeader>
+              <CardImage src={post.album.coverUri} />
+              <CardFooter>
+                <AlbumCredits>
+                  <Header>{post.album.artist}</Header>
+                  <Subheader>{post.album.title}</Subheader>
+                </AlbumCredits>
+                <IconContainer>
+                  <Bookmark />
+                </IconContainer>
+              </CardFooter>
+            </Card>
+          ))}
         </Cards>
       </Main>
     )
